@@ -1,6 +1,10 @@
-# Heimdall
+ Heimdall
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8.
+
+## Run express server
+
+Run `npm run start:server` to start express server.
 
 ## Development server
 
