@@ -1,2 +1,47 @@
-<p>main works!</p>
-<button>sdfgj</button>
+<mat-tab-group>
+    <mat-tab label="Thorium"></mat-tab>
+    <mat-tab label="Heimdall">
+        <mat-grid-list cols="3" md-gutter="12px" class="gridlist">
+            <mat-grid-tile [colspan]="1">
+                <form (submit)="onExecution(execForm)" #execForm="ngForm">
+                    <mat-form-field>
+                        <mat-label>URL</mat-label>
+                        <input matInput placeholder="Type the destination URL" type="url" name="inUrl" #url="ngModel" ngModel>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field>
+                        <mat-label>Label</mat-label>
+                        <input type="text"
+                                matInput
+                                placeholder="Type what you're looking for"
+                                [formControl]="myControl"
+                                [matAutocomplete]="auto">
+                        <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let label of filteredOptions | async" [value]="label">{{label}}</mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field>
+                        <mat-label>Browser</mat-label>
+                        <mat-select name="inBrowser" ngModel>
+                            <mat-option *ngFor="let browser of supportedBrowsers" [value]="browser">
+                                {{browser}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <br>
+                    <button mat-flat-button color="primary" type="submit">{{buttonValue}}</button>
+                    <br><br>
+                </form>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="2">
+                <img src="../../assets/screenshot.png" class="screenshot">
+            </mat-grid-tile>
+            <br>
+            <mat-grid-tile [colspan]="3">
+                <mat-progress-bar [mode]="progressType" value="0"></mat-progress-bar>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-tab>
+    <mat-tab label="Execution Configuration"></mat-tab>
+</mat-tab-group>
