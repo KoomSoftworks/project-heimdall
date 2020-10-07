@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "heimdall"
+  "defaultProject": "heimdall",
+  "cli": {
+    "analytics": false
+  }
 }
