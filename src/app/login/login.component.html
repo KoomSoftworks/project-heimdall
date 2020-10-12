@@ -1,1 +1,58 @@
-<p>login works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>
+        <mat-toolbar color="primary">
+          <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <span>Hemindall</span>
+          <span class="example-spacer"></span>
+          <button mat-raised-button><a src="./register/register.component.html";>Register</a></button>
+      
+        </mat-toolbar>
+      </p>
+    
+   
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>Registrate</mat-card-title>                 
+        </mat-card-header>
+      <hr />
+      <br>
+        <mat-card-content>
+          <form class="example-form">       
+            <p>
+              <mat-form-field class="example-full-width">
+                <mat-label>Correo o usuario</mat-label>
+                <input matInput>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-label>password</mat-label>
+                <input matInput>
+              </mat-form-field>
+            </p>
+          </form>
+      </mat-card-content>
+      <mat-card-actions>
+      <table class="example-full-width" cellspacing="0"><tr>
+        <button mat-raised-button color="primary">login</button>
+        <span>  </span>
+        <span class="example-spacer"></span>
+        <button mat-raised-button >Cancelar</button>              
+      </tr></table>
+      </mat-card-actions>
+
+      <mat-card-content>
+        <label class="Lavel-go" >Si aun no tienes un usuario registrate</label>
+      </mat-card-content>
+      </mat-card>
+    
+</body>
+</html>
