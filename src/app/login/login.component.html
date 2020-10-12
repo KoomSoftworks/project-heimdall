@@ -14,7 +14,7 @@
           </button>
           <span>Hemindall</span>
           <span class="example-spacer"></span>
-          <button mat-raised-button><a src="./register/register.component.html";>Register</a></button>
+          <button mat-raised-button routerLink="/register">Register</button>
       
         </mat-toolbar>
       </p>
@@ -22,7 +22,7 @@
    
       <mat-card class="example-card">
         <mat-card-header>
-          <mat-card-title>Registrate</mat-card-title>                 
+          <mat-card-title >Login</mat-card-title>                 
         </mat-card-header>
       <hr />
       <br>
@@ -45,7 +45,7 @@
         <button mat-raised-button color="primary">login</button>
         <span>  </span>
         <span class="example-spacer"></span>
-        <button mat-raised-button >Cancelar</button>              
+        <button mat-raised-button [routerLink]="['/']">Cancelar</button>              
       </tr></table>
       </mat-card-actions>
 
