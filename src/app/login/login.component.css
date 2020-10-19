@@ -1,11 +1,15 @@
+.body{
+  max-width: 1500px;
+}
 .example-spacer {
     flex: 1 1 auto;
   }
 
   .example-card {
-    margin-left: auto;
+    margin-left: 360px;
     margin-right: auto;
-    max-width: 400px;
+    margin-top: 100px;
+    max-width: 700px;
     box-shadow: 2px 2px 5px #999;
   }
  

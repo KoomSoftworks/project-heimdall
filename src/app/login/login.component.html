@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body background="https://i0.wp.com/ribook.org/wp-content/uploads/2019/01/light-blue-background.jpg?ssl=1" >
+  
 
     <p>
         <mat-toolbar color="primary">
@@ -14,19 +15,28 @@
           </button>
           <span>Hemindall</span>
           <span class="example-spacer"></span>
-          <button mat-raised-button routerLink="/register">Register</button>
+          <button routerLink="/register" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" 
+          routerLink="/start/register" routerLinkActive="Active">
+            <mat-icon>create</mat-icon>
+            </button>
+            <button mat-icon-button class="example-icon login-icon" aria-label="Example icon-button with heart icon"
+          routerLink="/start/login" routerLinkActive="Active" alin>
+            <mat-icon>login</mat-icon>
+            </button>
       
         </mat-toolbar>
       </p>
     
    
       <mat-card class="example-card">
+        
         <mat-card-header>
           <mat-card-title >Login</mat-card-title>                 
         </mat-card-header>
       <hr />
       <br>
         <mat-card-content>
+                 
           <form class="example-form">       
             <p>
               <mat-form-field class="example-full-width">
@@ -40,7 +50,7 @@
             </p>
           </form>
       </mat-card-content>
-      <mat-card-actions>
+      <mat-card-actions align="center">
       <table class="example-full-width" cellspacing="0"><tr>
         <button mat-raised-button color="primary">login</button>
         <span>  </span>
@@ -50,7 +60,7 @@
       </mat-card-actions>
 
       <mat-card-content>
-        <label class="Lavel-go" >Si aun no tienes un usuario registrate</label>
+        <label class="Lavel-go" routerLink="/start/register" routerLinkActive="Active">Si aun no tienes un usuario registrate</label>
       </mat-card-content>
       </mat-card>
     

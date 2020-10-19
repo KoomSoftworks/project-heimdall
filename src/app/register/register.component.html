@@ -14,8 +14,14 @@
           </button>
           <span>Hemindall</span>
           <span class="example-spacer"></span>
-          <button mat-raised-button>Singin</button>
-      
+          <button routerLink="/register" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" 
+          routerLink="/start/register" routerLinkActive="Active">
+            <mat-icon>create</mat-icon>
+            </button>
+          <button mat-icon-button class="example-icon login-icon" aria-label="Example icon-button with heart icon"
+          routerLink="/start/login" routerLinkActive="Active">
+            <mat-icon>login</mat-icon>
+            </button>
         </mat-toolbar>
       </p>
     
@@ -69,12 +75,12 @@
         <button mat-raised-button color="primary">Registrate</button>
         <span>  </span>
         <span class="example-spacer"></span>
-        <button mat-raised-button >Cancelar</button>              
+        <button mat-raised-button [routerLink]="['/']">Cancelar</button>              
       </tr></table>
       </mat-card-actions>
 
       <mat-card-content>
-        <label class="Lavel-go" >Si ya tienes un usuario entra aqui</label>
+        <label class="Lavel-go" [routerLink]="['/start/login']" routerLinkActive="Active" >Si ya tienes un usuario entra aqui</label>
       </mat-card-content>
       </mat-card>
     

@@ -12,9 +12,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
 const routes: Routes = [
   { path: 'start', component: AppStartComponent, children: [
     { path: 'home', component: HomeComponent },
+    { path: 'register', component: RegisterComponent },
     { path: '', redirectTo: '/start/home', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterComponent },
     { path: '404', component: NotFoundComponent },
     { path: '**', redirectTo: '/start/404', pathMatch: 'full' }
   ] },
