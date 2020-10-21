@@ -5,46 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <!--here is the divide of the cart-->
-    <mat-card class="example-card"  >
-        <mat-grid-list cols="1" rowHeight="550px">
-            <mat-grid-tile
+<body >
+    
+    <p>
+        <mat-toolbar color="primary">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                  <mat-icon>dialpad</mat-icon>
+                  <span routerLink="/start/register" routerLinkActive="active">Register</span>
+                </button>
                 
-                [colspan]="1"
-                [rowspan]="1"
-                [style.background]="">
-                <mat-card-header>
-                <mat-card-title>
-                    Her is the title
-                </mat-card-title>
-                <hr>
-                <br>
-                </mat-card-header>
-               <mat-card-subtitle >
-                   <!--her start the inputs-->
-                   <form class="example-form">
-                    <mat-form-field class="example-full-width">
-                      <mat-label>Favorite food</mat-label>
-                      <input matInput placeholder="Ex. Pizza" value="Sushi">
-                    </mat-form-field>
-                  
-                    <mat-form-field class="example-full-width">
-                      <mat-label>Leave a comment</mat-label>
-                      <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-                    </mat-form-field>
-                  </form>
-                  <!--here ends the input-->
-               </mat-card-subtitle>
-               <!--Here is the button or the actions in the cad--> 
-                <mat-card-actions >
-                    <button mat-button color="primary">
-                        Here is the button
-                    </button>
-                </mat-card-actions>
-            </mat-grid-tile>
-          </mat-grid-list>
-    </mat-card>
+                <button mat-menu-item>
+                  <mat-icon>notifications_off</mat-icon>
+                  <span routerLink="/start/login" routerLinkActive="Active">Login</span>
+                </button>
+              </mat-menu>
+          <span>Hemindall</span>
+          <span class="example-spacer"></span>
+          <button routerLink="/register" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" 
+          routerLink="/start/register" routerLinkActive="Active">
+            <mat-icon>create</mat-icon>
+            </button>
+          <button mat-icon-button class="example-icon login-icon" aria-label="Example icon-button with heart icon"
+          routerLink="/start/login" routerLinkActive="Active">
+            <mat-icon>login</mat-icon>
+            </button>
+        </mat-toolbar>
+      </p>
+
+      <!--here is teh divition with grids-->
+
+      <mat-grid-list cols="4" rowHeight="100px">
+        <mat-grid-tile
+            
+            [colspan]="4"
+            [rowspan]="3"
+            
+            class="mat-grid1">
+
+            <mat-card class="example-card">
+                
+                <mat-card-content>
+                  <p>
+                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                    bred for hunting.
+                  </p>
+                </mat-card-content>
+              </mat-card>
+            
+        </mat-grid-tile>
+      </mat-grid-list>
+
+
+      
 </body>
 </html>
 

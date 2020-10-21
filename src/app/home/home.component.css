@@ -1,7 +1,11 @@
-mat-grid-tile {
-    background: white;
-  }
+/*mat-grit-styles*/
 
+.mat-grid1{
+  background-color: lightblue;
+}
+  .example-spacer {
+    flex: 1 1 auto;
+  }
 
   /*input style*/
   .example-form {

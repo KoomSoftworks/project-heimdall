@@ -22,6 +22,10 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatGridListModule} from '@angular/material/grid-list';
 
+import {MatMenuModule} from '@angular/material/menu';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +48,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatTooltipModule,
     MatCardModule,
     MatInputModule,
-    MatGridListModule
+    MatGridListModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
