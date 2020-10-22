@@ -1,3 +1,10 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+h1{
+  color: #fff;
+}
 .grid-container {
   margin: 20px;
 }
@@ -28,3 +35,39 @@
   text-align: right;
 }
 
+.example-card {
+  max-width: 750px;
+  margin-left: 50px;
+  box-shadow: 2px 2px 5px #999;  
+}
+
+.contact{
+  background-color:#96D1FF ;
+  color: #fff;
+}
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.img1{
+    float:right;
+  width: 550px;
+  height: 250px;
+}
+
+.mat-grit-fotter{
+  background-color: #96D1FF ;
+}
+
+/*inputs*/
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
