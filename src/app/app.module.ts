@@ -24,6 +24,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 
 import {MatMenuModule} from '@angular/material/menu';
 
+import { LayoutModule } from '@angular/cdk/layout';
+
 
 
 @NgModule({
@@ -35,7 +37,8 @@ import {MatMenuModule} from '@angular/material/menu';
     RegisterComponent,
     AppStartComponent,
     MainComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatCardModule,
     MatInputModule,
     MatGridListModule,
-    MatMenuModule
+    MatMenuModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

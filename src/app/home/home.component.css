@@ -1,38 +1,30 @@
-/*mat-grit-styles*/
-
-.mat-grid1{
-  background-color: lightblue;
+.grid-container {
+  margin: 20px;
 }
-  .example-spacer {
-    flex: 1 1 auto;
-  }
 
-  /*input style*/
-  .example-form {
-    
-    min-width:200px;
-    max-width: 200px;
-    width: 100%;
-  }
-  
-  .example-full-width {
-    
-    width: 100%;
-  }
-  /*end the input style*/
-
-  /*cart style*/
-
-  .example-card {
-    margin-left: 360px;
-    margin-right: auto;
-    margin-top: 100px;
-    max-height:750px; 
-    max-width: 750px;
-    box-shadow: 2px 2px 5px #999;
-  }
-  
-  main {
-    column-count:4;
+.grid-container2 {
+  margin: 10px;
 }
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
   
+  text-align: left;
+}
+.dashboard-card-content2 {
+  text-align: right;
+}
+
