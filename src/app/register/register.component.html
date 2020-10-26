@@ -7,6 +7,9 @@
 </head>
 <body>
 
+
+  
+
     <p>
         <mat-toolbar color="primary">
           <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
@@ -33,56 +36,50 @@
       <hr />
       <br>
         <mat-card-content>
-          <form class="example-form">
+          <form [formGroup]="formularioc" class="example-form">
                       
             <table class="example-full-width" cellspacing="0"><tr>
               <td><mat-form-field class="example-full-width">
                 <mat-label>Usuario</mat-label>
-                <input matInput>
+                <input matInput formControlName="user">
               </mat-form-field></td>
               <td><mat-form-field class="example-full-width">
                 <mat-label>Nombre</mat-label>
-                <input matInput>
+                <input matInput formControlName="nombre">
               </mat-form-field></td>
             </tr></table>
             <td><mat-form-field class="example-full-width">
               <mat-label>Apellido Paterno</mat-label>
-              <input matInput>
-            </mat-form-field></td>
-            <td><mat-form-field class="example-full-width">
-              <mat-label>Apellido Materno</mat-label>
-              <input matInput>
-            </mat-form-field></td>
-          
+              <input matInput formControlName="apellidos">
+            </mat-form-field></td>        
             <p>
               <mat-form-field class="example-full-width">
                 <mat-label>Correo</mat-label>
-                <input matInput>
+                <input matInput formControlName="email">
               </mat-form-field>
               <mat-form-field class="example-full-width">
                 <mat-label>password</mat-label>
-                <input matInput>
+                <input matInput type="password" formControlName="password">
               </mat-form-field>
-              <mat-form-field class="example-full-width">
-                <mat-label>Confirma tu password</mat-label>
-                <input matInput>
-              </mat-form-field>
+              
             </p>
           </form>
       </mat-card-content>
       <mat-card-actions align="center">
       <table class="example-full-width" cellspacing="0"><tr>
-        <button mat-raised-button color="primary">Registrate</button>
+        <button mat-raised-button color="primary" (click)="agregar()" [disabled]="!formularioc.valid" >Registrate</button>
         <span>  </span>
         <span class="example-spacer"></span>
         <button mat-raised-button [routerLink]="['/']">Cancelar</button>              
       </tr></table>
       </mat-card-actions>
 
-      <mat-card-content>
+      <mat-card-content align="center">
         <label class="Lavel-go" [routerLink]="['/start/login']" routerLinkActive="Active" >Si ya tienes un usuario entra aqui</label>
       </mat-card-content>
       </mat-card>
+
+      
     
 </body>
 </html>
