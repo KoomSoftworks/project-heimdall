@@ -37,16 +37,25 @@ export class RegisterComponent implements OnInit {
   
   
   agregar(){
-    
-    console.log(this.formularioc.value.email)
+    if (this.formularioc.valid) {
+
+      console.log(this.formularioc.value.email)
     this.bd.collection('clientes').add(this.formularioc.value).then((termino)=>{
       console.log(this.formularioc.value)
     })
 
     this.auth.createUserWithEmailAndPassword(this.formularioc.value.email,this.formularioc.value.password).then((termino)=>{
       console.log("el usuario ", this.formularioc.value.email," con la contraseña ", this.formularioc.value.password, " Se agregos porfa checalo")
+      alert("Formulario correcto")
+      
     })
-  
+    
+      
+    }else{
+      alert("Formulario incorrecto")
+    }
+    
+    
   }
 
   

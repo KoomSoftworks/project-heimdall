@@ -45,7 +45,6 @@ import { AngularFirestore } from '@angular/fire/firestore';
     AppStartComponent,
     MainComponent,
     NotFoundComponent,
-    
   ],
   imports: [
     BrowserModule,
