@@ -71,3 +71,13 @@
   .example-full-width {
     width: 100%;
   }
+=======
+.screenshot{
+    max-width: 1920px;
+    max-height: 1080px;
+}
+
+.gridlist{
+    margin: 20px;
+    align-self: center;
+}
