@@ -10,12 +10,7 @@
 
   <div *ngIf="usuario && !cargando; else showLogin">
     <app-main></app-main>
-    
-    
-    
   </div>
-
-  
    
   <ng-template #showLogin>
     <div *ngIf="cargando">
@@ -41,7 +36,9 @@
       
         </mat-toolbar>
       </p>
-    
+      <div *ngIf="!dc" class="alert alert-warning" role="alert">
+        {{textoError}}
+      </div>
    
       <mat-card class="example-card">
         
@@ -55,10 +52,18 @@
           <form class="example-form" [formGroup]="formularioLogin" >       
             <p>
               <mat-form-field class="example-full-width">
+                <div *ngIf="formularioLogin.controls['email'].invalid && formularioLogin.controls['email'].dirty" class="alert alert-danger" role="alert">
+                  <span *ngIf="formularioLogin.controls['email'].errors.required">  Correo es requerido</span>
+                    <span *ngIf="formularioLogin.controls['email'].errors.email">Correo no es Valido</span>
+                </div> 
                 <mat-label>Correo o usuario</mat-label>
                 <input matInput type="email" formControlName="email">
               </mat-form-field>
+               
               <mat-form-field class="example-full-width">
+                <div *ngIf="formularioLogin.controls['password'].invalid && formularioLogin.controls['password'].dirty" class="alert alert-danger" role="alert">
+                  <span *ngIf="formularioLogin.controls['password'].errors.required">La contraseña es requerida</span> 
+              </div>  
                 <mat-label>password</mat-label>
                 <input matInput type="password" ((keyup.enter)="ingresar()" formControlName="password">
               </mat-form-field>
@@ -84,6 +89,9 @@
       </div>
 
     </div>
+    
+
+
     <ngx-spinner bdColor = "rgba(0,0,0,0)" size = "large" color = "#8994e2" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
   </ng-template> 
 

@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   dc:boolean=true;
   usuario: User;
   cargando:boolean=true;
+  textoError: string = ''
   
   constructor(public auth: AngularFireAuth,public cf:FormBuilder,public spinner: NgxSpinnerService,public bd: AngularFirestore) {
     
@@ -59,14 +60,17 @@ export class LoginComponent implements OnInit {
       this.spinner.show();
       this.auth.signInWithEmailAndPassword(this.formularioLogin.value.email,this.formularioLogin.value.password)
       .then((usuario)=>{
-
         console.log(usuario)
         this.spinner.hide();
       }).catch((error)=>{
+        this.dc = false;
+        this.textoError = error.message;
         this.spinner.hide();
+
       })
     }else{
     this.dc=false;
+    this.textoError = 'Por favor revisa que los datos esten correctos'
   }
 }
 

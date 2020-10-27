@@ -27,7 +27,9 @@
             </button>
         </mat-toolbar>
       </p>
-    
+      <div *ngIf="!dcr" class="alert alert-warning" role="alert">
+        {{textoErrorr}}
+      </div>
    
       <mat-card class="example-card">
         <mat-card-header>
@@ -80,6 +82,8 @@
       </mat-card>
 
       
-    
+      <ngx-spinner bdColor = "rgba(0,0,0,0)" size = "large" color = "#8994e2" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+        
+     
 </body>
 </html>
