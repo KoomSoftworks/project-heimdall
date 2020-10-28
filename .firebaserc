@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "heimdall-9ba3e": {
+      "hosting": {
+        "heimdall": [
+          "heimdall-9ba3e"
+        ]
+      }
+    }
+  }
+}

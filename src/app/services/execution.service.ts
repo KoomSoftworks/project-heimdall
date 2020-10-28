@@ -1,18 +1,26 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ExecutionService {
 
-  private host = 'http://localhost:3000/api';
+  private host = 'localhost:3001/api';
+  headers = new HttpHeaders({
+    'Content-Type': 'application/json'
+  });
+  
+  httpOptions = {
+    headers: this.headers
+  };
 
   constructor(private http: HttpClient) { }
 
   startExecution = (url: string, label: string, browser: string): Promise<object> => {
     const data = {url, label, browser};
-    return this.http.post(this.host + '/execute', data).toPromise();
+    return this.http.post(this.host + '/execution', data, this.httpOptions).toPromise();
   }
 
 }

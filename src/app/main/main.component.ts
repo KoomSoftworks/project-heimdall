@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { auth, User } from 'firebase';
 import { FormControl, NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 import { ExecutionService } from '../services/execution.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -28,9 +31,15 @@ export class MainComponent implements OnInit {
     'user'
   ];
 
-  constructor(private executionService: ExecutionService) { }
+  constructor(private executionService: ExecutionService, public router: Router) {
+    //console.log(this.router.getCurrentNavigation().extras.state.loggedIn);
+    // if (this.router.getCurrentNavigation().extras.state.loggedIn === null || this.router.getCurrentNavigation() === null) {
+    //   this.router.navigate(['start/login']);
+    // }
+  }
 
   ngOnInit(): void {
+
     this.filteredOptions = this.myControl.valueChanges
       .pipe(
         startWith(''),
@@ -48,14 +57,17 @@ export class MainComponent implements OnInit {
       this.buttonValue = 'Stop';
       this.progressType = 'indeterminate';
       this.started = true;
-      this.executionService.startExecution(form.value.inUrl, this.myControl.value, form.value.inBrowser).then((responseData) => {
-        console.log(responseData);
-      });
+      this.executionService.startExecution(form.value.inUrl, this.myControl.value, form.value.inBrowser).then((res) => {
+        console.log(res);
+      }).catch(err => {
+        console.log(err);
+      })
     } else {
       this.buttonValue = 'Search';
       this.progressType = 'determinate';
       this.started = false;
     }
+
   }
 
 }

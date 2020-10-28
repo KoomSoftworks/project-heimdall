@@ -1,0 +1,53 @@
+
+
+.example-margin {
+  margin: 0 10px;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  max-width: 500px;
+
+}
+.mat-form-field {
+  margin-right: 8px;
+  
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .example-card {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    max-width: 500px;
+    box-shadow: 2px 2px 5px #999;
+  }
+ 
+ 
+
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  td {
+    padding-right: 8px;
+  }
+
+  .Lavel-go{
+    color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+ 
