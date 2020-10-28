@@ -1,18 +1,4 @@
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body >
-  
 
-  <div *ngIf="usuario && !cargando; else showLogin">
-    <app-main></app-main>
-  </div>
-   
-  <ng-template #showLogin>
     <div *ngIf="cargando">
       <mat-spinner class="example-margin"></mat-spinner>
     </div>
@@ -92,11 +78,5 @@
     
 
 
-    <ngx-spinner bdColor = "rgba(0,0,0,0)" size = "large" color = "#8994e2" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
-  </ng-template> 
-
-
-    
-</body>
-</html>
+    <!-- <ngx-spinner bdColor = "rgba(0,0,0,0)" size = "large" color = "#8994e2" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner> -->
 

@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { auth, User } from 'firebase';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { RouterEvent } from '@angular/router';
+import { Router, RouterEvent } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 
@@ -20,7 +20,8 @@ export class RegisterComponent implements OnInit {
   dcr:boolean=true;
   
   
-  constructor(public auth: AngularFireAuth, private fb:FormBuilder, private bd: AngularFirestore, public spinner: NgxSpinnerService) {
+  constructor(public auth: AngularFireAuth, private fb:FormBuilder, private bd: AngularFirestore,
+    public spinner: NgxSpinnerService, public router: Router) {
     
   }
   

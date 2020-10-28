@@ -77,12 +77,12 @@
       </mat-card-actions>
 
       <mat-card-content align="center">
-        <label class="Lavel-go" [routerLink]="['/start/login']" routerLinkActive="Active" >Si ya tienes un usuario entra aqui</label>
+        <label class="Lavel-go" (click)="this.router.navigate(['start/login'])">Si ya tienes un usuario entra aqui</label>
       </mat-card-content>
       </mat-card>
 
       
-      <ngx-spinner bdColor = "rgba(0,0,0,0)" size = "large" color = "#8994e2" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+      <!-- <ngx-spinner bdColor = "rgba(0,0,0,0)" size = "large" color = "#8994e2" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner> -->
         
      
 </body>

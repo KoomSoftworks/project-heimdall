@@ -13,18 +13,18 @@ const routes: Routes = [
   { path: 'start', component: AppStartComponent, children: [
     { path: 'home', component: HomeComponent },
     { path: 'register', component: RegisterComponent },
-    { path: '', redirectTo: '/start/home', pathMatch: 'full' },
     { path: 'login', component: LoginComponent },
+    { path: '', redirectTo: '/start/home', pathMatch: 'full' },
     { path: '404', component: NotFoundComponent },
     { path: '**', redirectTo: '/start/404', pathMatch: 'full' }
   ] },
-  { path: '', redirectTo: '/start/home', pathMatch: 'full' },
   { path: 'main', component: MainNavBarComponent, children: [
     { path: 'home', component: MainComponent },
     { path: '', redirectTo: '/main/home', pathMatch: 'full' },
     { path: '404', component: NotFoundComponent },
     { path: '**', redirectTo: '/main/404', pathMatch: 'full' }
   ] },
+  { path: '', redirectTo: '/start/home', pathMatch: 'full' },
   { path: '404', component: NotFoundComponent },
   { path: '**', redirectTo: '/start/404', pathMatch: 'full' }
 ];

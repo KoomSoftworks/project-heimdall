@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
@@ -33,12 +33,6 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatSelectModule } from '@angular/material/select';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-
-
-import {MatCardModule} from '@angular/material/card';
-import {MatInputModule} from '@angular/material/input';
-import {MatGridListModule} from '@angular/material/grid-list';
 
 import {MatMenuModule} from '@angular/material/menu';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -46,7 +40,6 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { ReactiveFormsModule } from '@angular/forms';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { AngularFirestore } from '@angular/fire/firestore';
 
@@ -66,7 +59,6 @@ import { AngularFirestore } from '@angular/fire/firestore';
     HttpClientTestingModule,
     BrowserModule,
     AppRoutingModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
@@ -79,7 +71,6 @@ import { AngularFirestore } from '@angular/fire/firestore';
     MatGridListModule,
     MatMenuModule,
     LayoutModule,
-    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     MatSnackBarModule,
     MatProgressSpinnerModule,
@@ -88,12 +79,9 @@ import { AngularFirestore } from '@angular/fire/firestore';
     MatListModule,
     MatDialogModule,
     MatTabsModule,
-    MatInputModule,
-    MatCardModule,
     MatDividerModule,
     MatSelectModule,
     MatAutocompleteModule,
-    MatGridListModule,
     MatProgressBarModule
   ],
   providers: [

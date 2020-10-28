@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { auth, User } from 'firebase';
 import { NgxSpinnerService } from 'ngx-spinner';
 
@@ -22,9 +23,8 @@ export class LoginComponent implements OnInit {
   cargando:boolean=true;
   textoError: string = ''
   
-  constructor(public auth: AngularFireAuth,public cf:FormBuilder,public spinner: NgxSpinnerService,public bd: AngularFirestore) {
-    
-    
+  constructor(public auth: AngularFireAuth, public cf:FormBuilder, public spinner: NgxSpinnerService,
+    public bd: AngularFirestore, public router: Router) {
     
     this.auth.user.subscribe((user)=>{
       
@@ -32,7 +32,12 @@ export class LoginComponent implements OnInit {
       this.usuario = user;
       
     })
-
+    console.log(this.usuario);
+    console.log(this.cargando);
+    if(this.usuario){
+      console.log('nav');
+      this.router.navigate(['main/home'], { state: { loggedIn: true } });
+    }
 
    }
    
@@ -62,6 +67,7 @@ export class LoginComponent implements OnInit {
       .then((usuario)=>{
         console.log(usuario)
         this.spinner.hide();
+        this.router.navigate(['main/home'], { state: { loggedIn: true } });
       }).catch((error)=>{
         this.dc = false;
         this.textoError = error.message;
