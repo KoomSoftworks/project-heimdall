@@ -13,12 +13,12 @@ export class HomeComponent {
     map(({ matches }) => {
       if (matches) {
         return [
-          { title: 'Card 1', cols: 1, rows: 1 }
+          { title: 'Heminadall', cols: 1, rows: 1 }
         ];
       }
 
       return [
-        { title: 'Card 1', cols: 2, rows: 1 }
+        { title: 'Heminadall', cols: 2, rows: 1 }
       ];
     })
   );
