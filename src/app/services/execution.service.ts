@@ -18,9 +18,9 @@ export class ExecutionService {
 
   constructor(private http: HttpClient) { }
 
-  startExecution = (url: string, label: string, browser: string): Promise<object> => {
+  startExecution = (url: string, label: string, browser: string): Observable<object> => {
     const data = {url, label, browser};
-    return this.http.post(this.host + '/execution', data, this.httpOptions).toPromise();
+    return this.http.post(this.host + '/execution', data, this.httpOptions);
   }
 
 }

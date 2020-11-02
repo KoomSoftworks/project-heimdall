@@ -57,11 +57,9 @@ export class MainComponent implements OnInit {
       this.buttonValue = 'Stop';
       this.progressType = 'indeterminate';
       this.started = true;
-      this.executionService.startExecution(form.value.inUrl, this.myControl.value, form.value.inBrowser).then((res) => {
-        console.log(res);
-      }).catch(err => {
-        console.log(err);
-      })
+      this.executionService.startExecution(form.value.inUrl, this.myControl.value, form.value.inBrowser).subscribe(responseData => {
+        console.log(responseData);
+      });
     } else {
       this.buttonValue = 'Search';
       this.progressType = 'determinate';
