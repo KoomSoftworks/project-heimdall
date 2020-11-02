@@ -49,13 +49,12 @@ export class RegisterComponent implements OnInit {
       console.log(this.formularioc.value)
       this.spinner.hide();
     })
-
     this.auth.createUserWithEmailAndPassword(this.formularioc.value.email,this.formularioc.value.password).then((termino)=>{
       console.log("el usuario ", this.formularioc.value.email," con la contraseña ", this.formularioc.value.password, " Se agregos porfa checalo")
       alert("El user fue agregado correctamente")
-      this.spinner.hide();
+      
       this.dcr =true;
-     
+      this.router.navigate(['start/login'], { state: { loggedIn: true } });
     }).catch((error)=>{
       this.dcr =false;
       this.textoErrorr = error.message;
