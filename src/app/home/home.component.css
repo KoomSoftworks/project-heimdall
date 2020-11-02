@@ -2,6 +2,8 @@
   flex: 1 1 auto;
 }
 
+
+
 h1{
   color: #fff;
 }
@@ -56,9 +58,10 @@ h1{
 }
 
 .img1{
+  
     float:right;
   width: 550px;
-  height: 250px;
+  height: 350px;
 }
 
 .mat-grit-fotter{

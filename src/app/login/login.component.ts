@@ -5,6 +5,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { auth, User } from 'firebase';
 import { NgxSpinnerService } from 'ngx-spinner';
+import {AngularFirestoreDocument} from '@angular/fire/firestore'
+import * as firebase from 'firebase';
 
 
 
@@ -25,6 +27,8 @@ export class LoginComponent implements OnInit {
   
   constructor(public auth: AngularFireAuth, public cf:FormBuilder, public spinner: NgxSpinnerService,
     public bd: AngularFirestore, public router: Router) {
+
+      
     
     this.auth.user.subscribe((user)=>{
       
@@ -58,6 +62,25 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  onGoogleLogin(){
+   
+    var provider = new firebase.auth.GoogleAuthProvider();
+provider.addScope('profile');
+provider.addScope('email');
+firebase.auth().signInWithPopup(provider).then(
+ (usuario)=>{
+  console.log(usuario)
+  this.spinner.hide();
+  this.router.navigate(['main/home'], { state: { loggedIn: true } });
+}).catch((error)=>{
+  this.dc = false;
+  this.textoError = error.message;
+  this.spinner.hide();
+  
+})   
+  }
+  
+
   ingresar(){
 
     if(this.formularioLogin.valid){
@@ -83,8 +106,6 @@ export class LoginComponent implements OnInit {
   logo(){
     this.auth.signOut();
   }
-
-
 
 }
 

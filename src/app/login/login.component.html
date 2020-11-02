@@ -25,9 +25,13 @@
       <div *ngIf="!dc" class="alert alert-warning" role="alert">
         {{textoError}}
       </div>
-   
-      <mat-card class="example-card">
-        
+
+      <br><br><br>
+        <!--Logindiv-->
+        <mat-card class="example-card">
+      <mat-grid-list cols="2" rowHeight="500px">       
+        <mat-grid-tile>
+      <div>
         <mat-card-header>
           <mat-card-title >Login</mat-card-title>                 
         </mat-card-header>
@@ -56,6 +60,7 @@
             </p>
           </form>
       </mat-card-content>
+      
       <mat-card-actions align="center">
       <table class="example-full-width" cellspacing="0"><tr>
         <button mat-raised-button type="submit" (click)="ingresar()" color="primary" [disabled]="!formularioLogin.valid" >login</button>
@@ -64,19 +69,35 @@
         <button mat-raised-button [routerLink]="['/']">Cancelar</button>              
       </tr></table>
       </mat-card-actions>
+      <br>
+      <mat-card-content align="center">Sing in with</mat-card-content>
+      <hr>
+      <mat-card-actions>
+        <div class="example-button-container">
+          <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon" (click)="onGoogleLogin()">
+            <img src="../assets/googlei_2.png" style="width: 20px; height: 20px;">
+          </button>
+          <span>  </span>
+        <span class="example-spacer"></span>
+          <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+            <mat-icon>
+              facebook
+            </mat-icon>
+          </button>
+        </div> 
+      </mat-card-actions>
+      <br>
 
       <mat-card-content>
-        <label class="Lavel-go" routerLink="/start/register" routerLinkActive="Active">Si aun no tienes un usuario registrate</label>
+        <label class="Lavel-go" routerLink="/start/register" routerLinkActive="Active" >Si aun no tienes un usuario registrate</label>
       </mat-card-content>
-      </mat-card>
-
-      <div>
-        
-      </div>
-
     </div>
-    
-
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <img src="../assets/back2.png" alt="">
+    </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card> 
 
     <!-- <ngx-spinner bdColor = "rgba(0,0,0,0)" size = "large" color = "#8994e2" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner> -->
 
