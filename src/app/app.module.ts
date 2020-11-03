@@ -42,7 +42,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { AngularFirestore } from '@angular/fire/firestore';
-import { SendEComponent } from './send-e/send-e.component';
+
 
 
 @NgModule({
@@ -55,7 +55,7 @@ import { SendEComponent } from './send-e/send-e.component';
     AppStartComponent,
     MainComponent,
     NotFoundComponent,
-    SendEComponent,
+    
   ],
   imports: [
     HttpClientModule,

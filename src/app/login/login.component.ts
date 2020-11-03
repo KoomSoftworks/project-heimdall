@@ -62,6 +62,22 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  onFacebookLogin(){
+    // Sign in using a redirect.
+    var provider = new firebase.auth.FacebookAuthProvider();
+    provider.addScope('email');
+    firebase.auth().signInWithPopup(provider).then(function(result) {
+      // This gives you a Facebook Access Token.
+      
+      // The signed-in user info.
+      var user = result.user;
+    });
+
+
+
+
+  }
+
   onGoogleLogin(){
    
     var provider = new firebase.auth.GoogleAuthProvider();

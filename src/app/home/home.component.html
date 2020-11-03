@@ -1,40 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
+
 <!--here is the nave bar-->
-  <p>
-    <mat-toolbar color="primary">
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-            <mat-icon>more_vert</mat-icon>
+<p>
+  <mat-toolbar color="primary">
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/start/register" routerLinkActive="Active">
+            <mat-icon>create</mat-icon>
+            <span routerLink="/start/register" routerLinkActive="active">Register</span>
           </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item>
-              <mat-icon>create</mat-icon>
-              <span routerLink="/start/register" routerLinkActive="active">Register</span>
-            </button>
-            
-            <button mat-menu-item >
-              <mat-icon>login</mat-icon>
-              <span routerLink="/start/login" routerLinkActive="Active">Login</span>
-            </button>
-          </mat-menu>
-      <span>Hemindall</span>
-      <span class="example-spacer"></span>
-      <button  mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" 
-      routerLink="/start/register" routerLinkActive="Active">
-        <mat-icon>create</mat-icon>
-        </button>
-      <button mat-icon-button class="example-icon login-icon" aria-label="Example icon-button with heart icon"
-      routerLink="/start/login" routerLinkActive="Active">
-        <mat-icon>login</mat-icon>
-        </button>
-    </mat-toolbar>
-  </p>
+          
+          <button mat-menu-item routerLink="/start/login" routerLinkActive="Active">
+            <mat-icon>login</mat-icon>
+            <span >Login</span>
+          </button>
+        </mat-menu>
+    <span routerLink="/">Hemindall</span>
+    <span class="example-spacer"></span>
+    <button  mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" 
+    routerLink="/start/register" routerLinkActive="Active">
+      <mat-icon>create</mat-icon>
+      </button>
+    <button mat-icon-button class="example-icon login-icon" aria-label="Example icon-button with heart icon"
+    routerLink="/start/login" routerLinkActive="Active">
+      <mat-icon>login</mat-icon>
+      </button>
+  </mat-toolbar>
+</p>
 
   <!--Mat-grit-division-->
   
@@ -48,14 +41,21 @@
               {{card.title}}
             </mat-card-title>
           </mat-card-header>
+          <br><br>
           <mat-card-content class="dashboard-card-content" >
-            <mat-grid-list cols="2" rowHeight="150px">
-              <mat-grid-tile>Hemindall es un proyecto de ocr que tiene
-                como proposito ...
-              </mat-grid-tile>
-              <mat-grid-tile>Hemindall es un proyecto de ocr que tiene
-                como proposito ...</mat-grid-tile>
-            </mat-grid-list>
+            El mundo corporativo esta en el proceso de trascender de las practicas y el trabajo
+                manual a la automatización, pero, aunque algunas empresas se nieguen a seguir con
+                el movimiento, eso no detiene a las grandes empresas de TI seguir adelante y llevar
+                estos procesos a un nivel más allá de la simple automatización. Ese nivel es la
+                autonomía.
+<br><br>
+                La autonomía de estos procesos, especialmente procesos de TI como la Integración
+                Continua, la cual incluye comúnmente las pruebas de software, y la Entrega Continua,
+                son una de las mayores claves para el éxito de estas empresas, ya que están tratando
+                de ganar la carrera contra sus competidores al ser los primeros en desplegar nuevas
+                tecnologías y ser capaces de arreglar fallas con sus sistemas para mantener una
+                mayor estabilidad y tiempo de disponibilidad de sus aplicaciones o servicios de TI.
+              
           </mat-card-content>
         </mat-card>
       </mat-grid-tile>
@@ -71,15 +71,19 @@
             <div class="example-card-home">
                 <mat-card-header>
                   
-                  <mat-card-title>¿Que es?</mat-card-title>
+                  <mat-card-title>Objetivos</mat-card-title>
                   <mat-card-subtitle>Heminadll</mat-card-subtitle>
                 </mat-card-header>
                 
                 <mat-card-content>
                   <p>
-                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                    bred for hunting.
+                    El primordial objetivo de este proyecto es el desarrollo de una herramienta la cual
+permita la creación y la calidad de las pruebas de software de una manera más rápida
+y eficaz, utilizando herramientas y tecnologías emergentes como el Machine Learning
+y la Inteligencia Artificial se pretende crear una herramienta que le permita al usuario
+crear pruebas a través de una estimación de los objetos que pueda contener una
+aplicación web.
+
                   </p>
                 </mat-card-content>
               </div>
@@ -96,7 +100,7 @@
 
     <mat-grid-list cols="2" rowHeight="2:1">
         <mat-grid-tile>
-            <img mat-card-image src="../assets/back2.png" class="img1">
+            <img mat-card-image src="../assets/back2h.png" class="img1">
         </mat-grid-tile>
 
         <mat-grid-tile>
@@ -104,15 +108,25 @@
           <div class="example-card-home">
             <mat-card-header>
               
-              <mat-card-title>¿Que es?</mat-card-title>
+              <mat-card-title>Alcance</mat-card-title>
               <mat-card-subtitle>Heminadll</mat-card-subtitle>
             </mat-card-header>
             
             <mat-card-content>
               <p>
-                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.
+                Usando Reconocimiento Óptico de Caracteres la herramienta pretende buscar un
+                elemento web relacionado a la palabra clave o tag que el usuario le suministre a la
+                aplicación a través de modelos entrenados de Machine Learning, los cuales serán
+                entrenados con una amplia variedad de iconos recopilados a través de diversas
+                aplicaciones web para asegurar su correcto funcionamiento y su viabilidad como una
+                herramienta independiente como suplemento para la creación más rápida y de mejor
+                calidad de una aplicación web, todo esto a través de una API, la cual podría ser
+                integrada a cualquier aplicación y accesada con un token de seguridad.
+                <br><br>
+                La aplicación no será un framework para pruebas automatizadas sino una herramienta
+                más la cual podrá ser usada en cualquier otro framework o a través de una interfaz
+                gráfica la cual será proporcionada a forma de demo por la aplicación.
+                
               </p>
             </mat-card-content>
           </div>
@@ -124,37 +138,7 @@
   </mat-card>
 
   
-  <mat-card>
-
-    <div>
-
-      <mat-grid-list cols="2" rowHeight="2:1">
-          <mat-grid-tile>
-              <div class="example-card-home">
-                  <mat-card-header>
-                    
-                    <mat-card-title>¿Que es?</mat-card-title>
-                    <mat-card-subtitle>Heminadll</mat-card-subtitle>
-                  </mat-card-header>
-                  
-                  <mat-card-content>
-                    <p>
-                      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                      bred for hunting.
-                    </p>
-                  </mat-card-content>
-                </div>
-          </mat-grid-tile>
   
-          <mat-grid-tile>
-              <img mat-card-image src="../assets/back2.png" alt="heminda-example-img-cart" class="img1">
-          </mat-grid-tile>
-        </mat-grid-list>
-  
-      </div>
-  </mat-card>
-
 
   <!--Fotter home-->
 
@@ -164,8 +148,17 @@
         <div class="contact">
             <h1>contac us</h1>
         <br>
-        <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: white;">facebook</mat-icon>
-        <label style="color: white; font-size: 18px;">This is the facebook</label>
+        <div class="example-button-row">
+          <div class="example-flex-container">
+            <div class="example-button-container">
+              <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+                <mat-icon>facebook</mat-icon> 
+              </button>
+              
+              <label style="color: white; font-size: 18px;">Contact us in facebook</label>
+            </div>
+          </div>
+        </div>
         <br>
         <h3>
             and More.
@@ -177,24 +170,28 @@
     <mat-grid-tile>
 
         <div class="contact">
-            <h1 style="text-align: center;">Send us your 
-                oppinion</h1>
+            <h1 style="text-align: center;">Service for client</h1>
         <br>
         
-        <!--<form class="example-form"></form>
-            <mat-form-field class="example-full-width">
-              <mat-label>leave your email</mat-label>
-              <input matInput placeholder="Someone@hotmail.com" >
-            </mat-form-field>
-          </form>-->
-        <br>
-        <mat-form-field class="example-full-width">
-            <mat-label >Leave a comment</mat-label>
-            <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-          </mat-form-field>
-          <br>
-          <button mat-raised-button>Send us</button>
+        <div class="example-button-container">
+          <button mat-fab color="primary" aria-label="Example icon button with a delete icon" style="color: white;">
+            <mat-icon>how_to_reg</mat-icon>
+          </button>
+          <label style="color: white;">Register</label>
         </div>
+        <br>
+        <div class="example-button-container">
+          <button mat-fab color="accent" aria-label="Example icon button with a bookmark icon" style="color: white;">
+            <mat-icon>account_circle</mat-icon>
+          </button>
+          
+          <label style="color: white;">Login</label>
+        </div>
+        
+        
+      </div>
+        
+     
 
         
 
@@ -214,5 +211,4 @@
     
   </mat-grid-list>
   
-</body>
-</html>
+

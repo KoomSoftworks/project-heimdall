@@ -1,39 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<div *ngIf="cargando">
+  <mat-spinner class="example-margin"></mat-spinner>
+</div>
 
-
-  
-
-    <p>
-        <mat-toolbar color="primary">
-          <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-            <mat-icon>menu</mat-icon>
+<div *ngIf="!cargando">
+  <p>
+    <mat-toolbar color="primary">
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
           </button>
-          <span>Hemindall</span>
-          <span class="example-spacer"></span>
-          <button routerLink="/register" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" 
-          routerLink="/start/register" routerLinkActive="Active">
-            <mat-icon>create</mat-icon>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/start/register" routerLinkActive="Active">
+              <mat-icon>create</mat-icon>
+              <span routerLink="/start/register" routerLinkActive="active">Register</span>
             </button>
-          <button mat-icon-button class="example-icon login-icon" aria-label="Example icon-button with heart icon"
-          routerLink="/start/login" routerLinkActive="Active">
-            <mat-icon>login</mat-icon>
+            
+            <button mat-menu-item routerLink="/start/login" routerLinkActive="Active">
+              <mat-icon>login</mat-icon>
+              <span >Login</span>
             </button>
-        </mat-toolbar>
-      </p>
+          </mat-menu>
+      <span routerLink="/">Hemindall</span>
+      <span class="example-spacer"></span>
+      <button  mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" 
+      routerLink="/start/register" routerLinkActive="Active">
+        <mat-icon>create</mat-icon>
+        </button>
+      <button mat-icon-button class="example-icon login-icon" aria-label="Example icon-button with heart icon"
+      routerLink="/start/login" routerLinkActive="Active">
+        <mat-icon>login</mat-icon>
+        </button>
+    </mat-toolbar>
+  </p>
+
+
       <div *ngIf="!dcr" class="alert alert-warning" role="alert">
         {{textoErrorr}}
       </div>
    
-      <mat-card class="example-card">
+      <br><br><br>
+        <!--Registerndiv-->
+        <mat-card class="example-card">
+      <mat-grid-list cols="2" rowHeight="500px">       
+        <mat-grid-tile>
+      <div>
+      
         <mat-card-header>
-          <mat-card-title>Registrate</mat-card-title>                 
+          <mat-card-title>Sing up</mat-card-title>                 
         </mat-card-header>
       <hr />
       <br>
@@ -70,7 +82,7 @@
       </mat-card-content>
       <mat-card-actions align="center">
       <table class="example-full-width" cellspacing="0"><tr>
-        <button mat-raised-button color="primary" (click)="agregar()" [disabled]="!formularioc.valid" >Registrate</button>
+        <button mat-raised-button color="primary" (click)="agregar()" [disabled]="!formularioc.valid" >Sing up</button>
         <span>  </span>
         <span class="example-spacer"></span>
         <button mat-raised-button [routerLink]="['/']">Cancelar</button>              
@@ -80,11 +92,12 @@
       <mat-card-content align="center">
         <label class="Lavel-go" (click)="this.router.navigate(['start/login'])">Si ya tienes un usuario entra aqui</label>
       </mat-card-content>
-      </mat-card>
-
-      
-      <!-- <ngx-spinner bdColor = "rgba(0,0,0,0)" size = "large" color = "#8994e2" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner> -->
-        
-     
-</body>
-</html>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <img src="../assets/back_3r.png" style="height: 500px; width: 550px;" alt="">
+  </mat-grid-tile>
+  </mat-grid-list>
+</mat-card> 
+</div>
+<br><br><br><br>
