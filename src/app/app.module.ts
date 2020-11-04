@@ -43,6 +43,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { AngularFirestore } from '@angular/fire/firestore';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +55,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
     AppStartComponent,
     MainComponent,
     NotFoundComponent,
+    
   ],
   imports: [
     HttpClientModule,
@@ -86,7 +89,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
   ],
   providers: [
     AngularFireAuth,
-    AngularFirestore
+    AngularFirestore,
+    
   ],  bootstrap: [AppComponent]
 })
 export class AppModule { }

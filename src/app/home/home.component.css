@@ -2,6 +2,8 @@
   flex: 1 1 auto;
 }
 
+
+
 h1{
   color: #fff;
 }
@@ -41,6 +43,11 @@ h1{
   box-shadow: 2px 2px 5px #999;  
 }
 
+.example-card-home {
+  max-width: 750px;
+  margin-left: 50px;  
+}
+
 .contact{
   background-color:#96D1FF ;
   color: #fff;
@@ -51,9 +58,10 @@ h1{
 }
 
 .img1{
+  
     float:right;
   width: 550px;
-  height: 250px;
+  height: 350px;
 }
 
 .mat-grit-fotter{
@@ -70,4 +78,8 @@ h1{
 
 .example-full-width {
   width: 100%;
+}
+
+.back{
+  background-image: url("/assets/back_home.png");
 }

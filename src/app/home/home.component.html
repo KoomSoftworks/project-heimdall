@@ -1,40 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
+
 <!--here is the nave bar-->
-  <p>
-    <mat-toolbar color="primary">
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-            <mat-icon>more_vert</mat-icon>
+<p>
+  <mat-toolbar color="primary">
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/start/register" routerLinkActive="Active">
+            <mat-icon>create</mat-icon>
+            <span routerLink="/start/register" routerLinkActive="active">Register</span>
           </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item>
-              <mat-icon>create</mat-icon>
-              <span routerLink="/start/register" routerLinkActive="active">Register</span>
-            </button>
-            
-            <button mat-menu-item >
-              <mat-icon>login</mat-icon>
-              <span routerLink="/start/login" routerLinkActive="Active">Login</span>
-            </button>
-          </mat-menu>
-      <span>Hemindall</span>
-      <span class="example-spacer"></span>
-      <button  mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" 
-      routerLink="/start/register" routerLinkActive="Active">
-        <mat-icon>create</mat-icon>
-        </button>
-      <button mat-icon-button class="example-icon login-icon" aria-label="Example icon-button with heart icon"
-      routerLink="/start/login" routerLinkActive="Active">
-        <mat-icon>login</mat-icon>
-        </button>
-    </mat-toolbar>
-  </p>
+          
+          <button mat-menu-item routerLink="/start/login" routerLinkActive="Active">
+            <mat-icon>login</mat-icon>
+            <span >Login</span>
+          </button>
+        </mat-menu>
+    <span routerLink="/">Hemindall</span>
+    <span class="example-spacer"></span>
+    <button  mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" 
+    routerLink="/start/register" routerLinkActive="Active">
+      <mat-icon>create</mat-icon>
+      </button>
+    <button mat-icon-button class="example-icon login-icon" aria-label="Example icon-button with heart icon"
+    routerLink="/start/login" routerLinkActive="Active">
+      <mat-icon>login</mat-icon>
+      </button>
+  </mat-toolbar>
+</p>
 
   <!--Mat-grit-division-->
   
@@ -46,20 +39,23 @@
           <mat-card-header>
             <mat-card-title>
               {{card.title}}
-              <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-                <mat-icon>more_vert</mat-icon>
-              </button>
-              <mat-menu #menu="matMenu" xPosition="before">
-                <button mat-menu-item>Expand</button>
-                <button mat-menu-item>Remove</button>
-              </mat-menu>
             </mat-card-title>
           </mat-card-header>
+          <br><br>
           <mat-card-content class="dashboard-card-content" >
-            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, saepe! Dolorum aut excepturi, nobis doloribus hic voluptas laborum ad fugit ab. Laudantium dignissimos ea, dolorum ipsam dolores officia autem tenetur.</div>
-          </mat-card-content>
-          <mat-card-content class="dashboard-card-content2" >
-            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, saepe! Dolorum aut excepturi, nobis doloribus hic voluptas laborum ad fugit ab. Laudantium dignissimos ea, dolorum ipsam dolores officia autem tenetur.</div>
+            El mundo corporativo esta en el proceso de trascender de las practicas y el trabajo
+                manual a la automatización, pero, aunque algunas empresas se nieguen a seguir con
+                el movimiento, eso no detiene a las grandes empresas de TI seguir adelante y llevar
+                estos procesos a un nivel más allá de la simple automatización. Ese nivel es la
+                autonomía.
+<br><br>
+                La autonomía de estos procesos, especialmente procesos de TI como la Integración
+                Continua, la cual incluye comúnmente las pruebas de software, y la Entrega Continua,
+                son una de las mayores claves para el éxito de estas empresas, ya que están tratando
+                de ganar la carrera contra sus competidores al ser los primeros en desplegar nuevas
+                tecnologías y ser capaces de arreglar fallas con sus sistemas para mantener una
+                mayor estabilidad y tiempo de disponibilidad de sus aplicaciones o servicios de TI.
+              
           </mat-card-content>
         </mat-card>
       </mat-grid-tile>
@@ -72,99 +68,77 @@
 
     <mat-grid-list cols="2" rowHeight="2:1">
         <mat-grid-tile>
-            <mat-card class="example-card">
+            <div class="example-card-home">
                 <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>Shiba Inu</mat-card-title>
-                  <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                  
+                  <mat-card-title>Objetivos</mat-card-title>
+                  <mat-card-subtitle>Heminadll</mat-card-subtitle>
                 </mat-card-header>
                 
                 <mat-card-content>
                   <p>
-                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                    bred for hunting.
+                    El primordial objetivo de este proyecto es el desarrollo de una herramienta la cual
+permita la creación y la calidad de las pruebas de software de una manera más rápida
+y eficaz, utilizando herramientas y tecnologías emergentes como el Machine Learning
+y la Inteligencia Artificial se pretende crear una herramienta que le permita al usuario
+crear pruebas a través de una estimación de los objetos que pueda contener una
+aplicación web.
+
                   </p>
                 </mat-card-content>
-                <mat-card-actions>
-                  <button mat-button>LIKE</button>
-                  <button mat-button>SHARE</button>
-                </mat-card-actions>
-              </mat-card>
+              </div>
         </mat-grid-tile>
 
-        <mat-grid-tile>
-            <img mat-card-image src="data:image/png;base64,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" alt="heminda-example-img-cart" class="img1">
+        <mat-grid-tile class="mat-grid-back">
+            <img  src="../assets/back2.png" alt="heminda-example-img-cart" class="img1">
         </mat-grid-tile>
       </mat-grid-list>
 
-  </mat-card>
-
+    </mat-card>
+    
   <mat-card>
 
     <mat-grid-list cols="2" rowHeight="2:1">
         <mat-grid-tile>
-            <img mat-card-image src="data:image/png;base64,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" alt="heminda-example-img-cart" class="img1">
+            <img mat-card-image src="../assets/back2h.png" class="img1">
         </mat-grid-tile>
 
         <mat-grid-tile>
 
-            <mat-card class="example-card">
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>Shiba Inu</mat-card-title>
-                  <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-                </mat-card-header>
+          <div class="example-card-home">
+            <mat-card-header>
+              
+              <mat-card-title>Alcance</mat-card-title>
+              <mat-card-subtitle>Heminadll</mat-card-subtitle>
+            </mat-card-header>
+            
+            <mat-card-content>
+              <p>
+                Usando Reconocimiento Óptico de Caracteres la herramienta pretende buscar un
+                elemento web relacionado a la palabra clave o tag que el usuario le suministre a la
+                aplicación a través de modelos entrenados de Machine Learning, los cuales serán
+                entrenados con una amplia variedad de iconos recopilados a través de diversas
+                aplicaciones web para asegurar su correcto funcionamiento y su viabilidad como una
+                herramienta independiente como suplemento para la creación más rápida y de mejor
+                calidad de una aplicación web, todo esto a través de una API, la cual podría ser
+                integrada a cualquier aplicación y accesada con un token de seguridad.
+                <br><br>
+                La aplicación no será un framework para pruebas automatizadas sino una herramienta
+                más la cual podrá ser usada en cualquier otro framework o a través de una interfaz
+                gráfica la cual será proporcionada a forma de demo por la aplicación.
                 
-                <mat-card-content>
-                  <p>
-                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                    bred for hunting.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions>
-                  <button mat-button>LIKE</button>
-                  <button mat-button>SHARE</button>
-                </mat-card-actions>
-              </mat-card>
+              </p>
+            </mat-card-content>
+          </div>
+    
+
         </mat-grid-tile>
       </mat-grid-list>
 
   </mat-card>
 
   
-  <mat-card>
-
-    <mat-grid-list cols="2" rowHeight="2:1">
-        <mat-grid-tile>
-            <mat-card class="example-card">
-                <mat-card-header>
-                  <div mat-card-avatar class="example-header-image"></div>
-                  <mat-card-title>Shiba Inu</mat-card-title>
-                  <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-                </mat-card-header>
-                
-                <mat-card-content>
-                  <p>
-                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-                    A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-                    bred for hunting.
-                  </p>
-                </mat-card-content>
-                <mat-card-actions>
-                  <button mat-button>LIKE</button>
-                  <button mat-button>SHARE</button>
-                </mat-card-actions>
-              </mat-card>
-        </mat-grid-tile>
-
-        <mat-grid-tile>
-            <img mat-card-image src="data:image/png;base64,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" alt="heminda-example-img-cart" class="img1">
-        </mat-grid-tile>
-      </mat-grid-list>
-  </mat-card>
-
+  
 
   <!--Fotter home-->
 
@@ -174,8 +148,17 @@
         <div class="contact">
             <h1>contac us</h1>
         <br>
-        <mat-icon aria-hidden="false" aria-label="Example home icon" style="color: white;">facebook</mat-icon>
-        <label style="color: white; font-size: 18px;">This is the facebook</label>
+        <div class="example-button-row">
+          <div class="example-flex-container">
+            <div class="example-button-container">
+              <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+                <mat-icon>facebook</mat-icon> 
+              </button>
+              
+              <label style="color: white; font-size: 18px;">Contact us in facebook</label>
+            </div>
+          </div>
+        </div>
         <br>
         <h3>
             and More.
@@ -187,24 +170,28 @@
     <mat-grid-tile>
 
         <div class="contact">
-            <h1 style="text-align: center;">Send us your 
-                oppinion</h1>
+            <h1 style="text-align: center;">Service for client</h1>
         <br>
         
-        <!--<form class="example-form"></form>
-            <mat-form-field class="example-full-width">
-              <mat-label>leave your email</mat-label>
-              <input matInput placeholder="Someone@hotmail.com" >
-            </mat-form-field>
-          </form>-->
-        <br>
-        <mat-form-field class="example-full-width">
-            <mat-label >Leave a comment</mat-label>
-            <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-          </mat-form-field>
-          <br>
-          <button mat-raised-button>Send us</button>
+        <div class="example-button-container">
+          <button mat-fab color="primary" aria-label="Example icon button with a delete icon" style="color: white;">
+            <mat-icon>how_to_reg</mat-icon>
+          </button>
+          <label style="color: white;">Register</label>
         </div>
+        <br>
+        <div class="example-button-container">
+          <button mat-fab color="accent" aria-label="Example icon button with a bookmark icon" style="color: white;">
+            <mat-icon>account_circle</mat-icon>
+          </button>
+          
+          <label style="color: white;">Login</label>
+        </div>
+        
+        
+      </div>
+        
+     
 
         
 
@@ -224,5 +211,4 @@
     
   </mat-grid-list>
   
-</body>
-</html>
+
