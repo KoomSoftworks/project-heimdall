@@ -35,11 +35,17 @@
                 </form>
             </mat-grid-tile>
             <mat-grid-tile [colspan]="2">
-                <img src="../../assets/screenshot.png" class="screenshot">
+                <img [src]="imgSource" class="screenshot">
             </mat-grid-tile>
             <br>
             <mat-grid-tile [colspan]="3">
                 <mat-progress-bar [mode]="progressType" value="0"></mat-progress-bar>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="3">
+                <div *ngFor="let res of result">
+                    {{res}}
+                    <br>
+                </div>
             </mat-grid-tile>
         </mat-grid-list>
     </mat-tab>

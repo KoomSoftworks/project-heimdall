@@ -1,10 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -34,7 +33,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatGridListModule } from '@angular/material/grid-list';
 
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
 import { LayoutModule } from '@angular/cdk/layout';
 
 import { AngularFireModule } from '@angular/fire';
@@ -42,8 +41,6 @@ import { environment } from 'src/environments/environment';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { AngularFirestore } from '@angular/fire/firestore';
-
-
 
 @NgModule({
   declarations: [
@@ -54,13 +51,11 @@ import { AngularFirestore } from '@angular/fire/firestore';
     RegisterComponent,
     AppStartComponent,
     MainComponent,
-    NotFoundComponent,
-    
+    NotFoundComponent
   ],
   imports: [
-    HttpClientModule,
-    HttpClientTestingModule,
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -89,8 +84,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
   ],
   providers: [
     AngularFireAuth,
-    AngularFirestore,
-    
+    AngularFirestore
   ],  bootstrap: [AppComponent]
 })
 export class AppModule { }

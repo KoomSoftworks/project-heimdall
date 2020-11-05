@@ -3,10 +3,9 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { auth, User } from 'firebase';
+import { User } from 'firebase';
 import { NgxSpinnerService } from 'ngx-spinner';
-import {AngularFirestoreDocument} from '@angular/fire/firestore'
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
 
 
 
@@ -18,7 +17,7 @@ import * as firebase from 'firebase';
 export class LoginComponent implements OnInit {
 
   
-  clientes: any[] =new Array<any>();
+  clientes: any[] = new Array<any>();
   formularioLogin:FormGroup
   dc:boolean=true;
   usuario: User;

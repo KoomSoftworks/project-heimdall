@@ -5,10 +5,10 @@ const app = express();
 require('geckodriver');
 require('chromedriver');
 let fs = require('fs');
+const path = require('path');
 let webdriver = require('selenium-webdriver');
 const tfnode = require('@tensorflow/tfjs-node');
 const coco = require('@tensorflow-models/coco-ssd');
-const { WebElement } = require('selenium-webdriver');
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
@@ -32,6 +32,11 @@ let driver;
 app.get('/api', (req, res) => {
     res.send('<h1>Working!</h1>');
 });
+
+app.post('/api', (req, res) => {
+    console.log(req.body);
+    res.send('posted');
+})
 
 app.post('/api/execution', async (req, res, next) => {
     console.log(req.body);
@@ -130,33 +135,48 @@ app.post('/api/execution', async (req, res, next) => {
                                 }
                             });
 
-                            //Promise.all([driver.get(path), driver.executeScript(script)])
-                            
+                            await driver.get(path);
 
-                            driver.get(path).then(async() => {
-                                results.forEach((result) => {
-                                    let element = driver.executeScript('return document.elementFromPoint(arguments[0], arguments[1])',
-                                    result.coordinates.x, result.coordinates.y);
-                                    console.log(element);
-                                    element.then((cback) => {
-                                        let tagName;
-                                        let path;
-                                        Promise.all([cback.getTagName(), cback.getAttribute('id'), cback.getAttribute('alt'),
-                                        cback.getAttribute('class'), cback.getAttribute('title')]).then(values => {
-                                            tagName = values[0];
-                                            path = `//${tagName}[@id='${values[1]}']`;
-                                            result['xpath-id'] = path;
-                                            path = `//${tagName}[@alt='${values[2]}']`;
-                                            result['xpath-alt'] = path;
-                                            path = `//${tagName}[@class='${values[3]}']`;
-                                            result['xpath-class'] = path;
-                                            path = `//${tagName}[@title='${values[4]}']`;
-                                            result['xpath-title'] = path;
-                                            console.log(result);
-                                        });
-                            
-                                        
-                                        // let tagPromise = cback.getTagName();
+                            for (let i = 0; i < results.length; i++) {
+                                const result = results[i];
+                                let element = await driver.executeScript('return document.elementFromPoint(arguments[0], arguments[1])',
+                                result.coordinates.x, result.coordinates.y);
+                                // set for for attributes
+                                let tagName = await element.getTagName();
+                                let elId = await element.getAttribute('id');
+                                let xpath = `//${tagName}[@id='${elId}']`;
+                                result['xpath-id'] = xpath;
+                                let elAlt = await element.getAttribute('alt');
+                                xpath = `//${tagName}[@alt='${elAlt}']`;
+                                result['xpath-alt'] = xpath;
+                                let elClass = await element.getAttribute('class');
+                                xpath = `//${tagName}[@class='${elClass}']`;
+                                result['xpath-class'] = xpath;
+                                let elTitle = await element.getAttribute('title');
+                                xpath = `//${tagName}[@title='${elTitle}']`;
+                                result['xpath-title'] = xpath;
+                                console.log(result);
+                            }
+
+                            response = {
+                                error: false,
+                                code: 200,
+                                message: 'Executed correctly',
+                                image: img,
+                                data: results,
+                                allPredictions: predicts
+                            };
+                            //driver.quit();
+                            res.send(response);
+                        }
+                    }
+                })
+            });
+        });
+    }
+});
+
+// let tagPromise = cback.getTagName();
                                         // tagPromise.then((tg) => {
                                         //     tagName = tg;
                                         // });
@@ -170,28 +190,9 @@ app.post('/api/execution', async (req, res, next) => {
                                         //         }
                                         //     });
                                         // });
-                                    });
-                                });
-                                response = {
-                                    error: false,
-                                    code: 200,
-                                    message: 'Executed correctly',
-                                    data: results,
-                                    allPredictions: predicts
-                                };
-                                //driver.quit();
-                                res.send(response);                                
-                            });
-                        }
-                    }
-                })
-            });
-        });
-    }
-});
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist/project-heimdall/index.html'));
+    res.sendFile(path.join(__dirname, 'dist/heimdall/index.html'));
 });
 
 app.get('/*', (req, res) => res.sendFile(path.join(__dirname)));
