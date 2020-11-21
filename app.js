@@ -13,6 +13,8 @@ const coco = require('@tensorflow-models/coco-ssd');
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
+app.use(express.static(__dirname + '/dist/heimdall/'));
+
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
@@ -99,7 +101,8 @@ app.post('/api/execution', async (req, res, next) => {
                         response = {
                             error: false,
                             code: 202,
-                            message: 'Nothing was found'
+                            message: 'Nothing was found',
+                            image: img
                         };
                         driver.quit();
                         res.send(response);
@@ -115,7 +118,8 @@ app.post('/api/execution', async (req, res, next) => {
                                 error: false,
                                 code: 203,
                                 message: 'There were no matches',
-                                allPredictions: predicts
+                                allPredictions: predicts,
+                                image: img
                             };
                             driver.quit();
                             res.send(response);
