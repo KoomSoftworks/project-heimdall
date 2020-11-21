@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ExecutionService {
 
-  private host = 'http://localhost:3001/api';
+  private host = 'https://ves-heimdall.herokuapp.com/api';
 
   headers = new HttpHeaders({
     'Content-Type': 'application/json'
