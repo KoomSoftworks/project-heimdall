@@ -2,13 +2,19 @@
   flex: 1 1 auto;
 }
 
+.mat-c-title{
 
+width: 100%;
+height: 100%;
+
+}
 
 h1{
   color: #fff;
 }
 .grid-container {
   margin: 20px;
+  
 }
 
 .grid-container2 {
@@ -21,6 +27,8 @@ h1{
   left: 15px;
   right: 15px;
   bottom: 15px;
+  height: 100%;
+  width: 100%;
 }
 
 .more-button {
@@ -60,8 +68,8 @@ h1{
 .img1{
   
     float:right;
-  width: 550px;
-  height: 350px;
+  width: 100%px;
+  height: 50%px;
 }
 
 .mat-grit-fotter{

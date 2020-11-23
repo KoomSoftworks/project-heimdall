@@ -2,6 +2,7 @@
   <mat-spinner class="example-margin"></mat-spinner>
 </div>
 
+<!---Aqui esta el menu-->
 <div *ngIf="!cargando">
   <p>
     <mat-toolbar color="primary">
@@ -32,15 +33,15 @@
     </mat-toolbar>
   </p>
 
-
+<!--aqui vemos el mensaje de error-->
       <div *ngIf="!dcr" class="alert alert-warning" role="alert">
         {{textoErrorr}}
       </div>
    
       <br><br><br>
-        <!--Registerndiv-->
+        <!--aqui encotramos el for para llenar el registro-->
         <mat-card class="example-card">
-      <mat-grid-list cols="2" rowHeight="500px">       
+      <mat-grid-list cols="1" rowHeight="500px">       
         <mat-grid-tile>
       <div>
       
@@ -80,6 +81,7 @@
             </p>
           </form>
       </mat-card-content>
+      <!--Aqui vemos los botones-->
       <mat-card-actions align="center">
       <table class="example-full-width" cellspacing="0"><tr>
         <button mat-raised-button color="primary" (click)="agregar()" [disabled]="!formularioc.valid" >Sing up</button>
@@ -93,9 +95,6 @@
         <label class="Lavel-go" (click)="this.router.navigate(['start/login'])">Si ya tienes un usuario entra aqui</label>
       </mat-card-content>
     </div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <img src="../assets/back_3r.png" style="height: 500px; width: 550px;" alt="">
   </mat-grid-tile>
   </mat-grid-list>
 </mat-card> 

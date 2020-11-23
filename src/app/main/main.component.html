@@ -1,9 +1,9 @@
 <mat-tab-group>
     <!-- <mat-tab label="Thorium"></mat-tab> -->
     <mat-tab label="Heimdall">
-        <mat-grid-list cols="3" md-gutter="12px" class="gridlist">
-            <mat-grid-tile [colspan]="1">
-                <form (submit)="onExecution(execForm)" #execForm="ngForm">
+        <mat-grid-list cols="3" rowHeight="350px" class="gridlist">
+            <mat-grid-tile [colspan]="1"  >
+                <form (submit)="onExecution(execForm)" #execForm="ngForm" class="example-form" >
                     <mat-form-field>
                         <mat-label>URL</mat-label>
                         <input matInput placeholder="Type the destination URL" type="url" name="inUrl" #url="ngModel" ngModel>
@@ -29,15 +29,17 @@
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
-                    <br>
+            <br>
                     <button mat-flat-button color="primary" type="submit">{{buttonValue}}</button>
                     <br><br>
                 </form>
+                
             </mat-grid-tile>
+        <br>
             <mat-grid-tile [colspan]="2">
                 <img [src]="imgSource" class="screenshot">
             </mat-grid-tile>
-            <br>
+            <br><br>
             <mat-grid-tile [colspan]="3">
                 <mat-progress-bar [mode]="progressType" value="0"></mat-progress-bar>
             </mat-grid-tile>

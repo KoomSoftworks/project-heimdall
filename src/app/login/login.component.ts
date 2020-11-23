@@ -96,6 +96,7 @@ firebase.auth().signInWithPopup(provider).then(
   }
   
 
+
   ingresar(){
 
     if(this.formularioLogin.valid){

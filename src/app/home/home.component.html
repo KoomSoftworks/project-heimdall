@@ -1,5 +1,5 @@
 
-<!--here is the nave bar-->
+<!--aqui esta en menu-->
 <p>
   <mat-toolbar color="primary">
       <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
@@ -29,16 +29,16 @@
   </mat-toolbar>
 </p>
 
-  <!--Mat-grit-division-->
+
+
+  <!--aqui esta la division de contenidos-->
   
   <div class="grid-container">
     <h1 class="mat-h1">Dashboard</h1>
-    <mat-grid-list cols="2" rowHeight="350px">
-      <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
-        <mat-card class="dashboard-card">
+        <mat-card >
           <mat-card-header>
             <mat-card-title>
-              {{card.title}}
+              Hemidall
             </mat-card-title>
           </mat-card-header>
           <br><br>
@@ -58,54 +58,33 @@
               
           </mat-card-content>
         </mat-card>
-      </mat-grid-tile>
-    </mat-grid-list>
   </div>
-
   <br>
-
-  <mat-card>
-
-    <mat-grid-list cols="2" rowHeight="2:1">
-        <mat-grid-tile>
-            <div class="example-card-home">
+  
+<!---Mat card de objetivo-->
+    <div class="grid-container">
+    
+    <mat-card>
                 <mat-card-header>
-                  
                   <mat-card-title>Objetivos</mat-card-title>
-                  <mat-card-subtitle>Heminadll</mat-card-subtitle>
+                  <mat-card-subtitle>Heminadall</mat-card-subtitle>
                 </mat-card-header>
                 
                 <mat-card-content>
                   <p>
                     El primordial objetivo de este proyecto es el desarrollo de una herramienta la cual
-permita la creación y la calidad de las pruebas de software de una manera más rápida
-y eficaz, utilizando herramientas y tecnologías emergentes como el Machine Learning
-y la Inteligencia Artificial se pretende crear una herramienta que le permita al usuario
-crear pruebas a través de una estimación de los objetos que pueda contener una
-aplicación web.
-
+                    permita la creación y la calidad de las pruebas de software de una manera más rápida
+                    y eficaz, utilizando herramientas y tecnologías emergentes como el Machine Learning
+                    y la Inteligencia Artificial se pretende crear una herramienta que le permita al usuario
+                    crear pruebas a través de una estimación de los objetos que pueda contener una
+                    aplicación web.
                   </p>
                 </mat-card-content>
-              </div>
-        </mat-grid-tile>
+        </mat-card>
+<br><br>
 
-        <mat-grid-tile class="mat-grid-back">
-            <img  src="../assets/back2.png" alt="heminda-example-img-cart" class="img1">
-        </mat-grid-tile>
-      </mat-grid-list>
-
-    </mat-card>
-    
-  <mat-card>
-
-    <mat-grid-list cols="2" rowHeight="2:1">
-        <mat-grid-tile>
-            <img mat-card-image src="../assets/back2h.png" class="img1">
-        </mat-grid-tile>
-
-        <mat-grid-tile>
-
-          <div class="example-card-home">
+        <mat-card>
+          
             <mat-card-header>
               
               <mat-card-title>Alcance</mat-card-title>
@@ -129,22 +108,18 @@ aplicación web.
                 
               </p>
             </mat-card-content>
-          </div>
+  </mat-card>
+  
+        </div>
+        
+      <br><br>
+    
     
 
-        </mat-grid-tile>
-      </mat-grid-list>
-
-  </mat-card>
-
-  
-  
-
   <!--Fotter home-->
-
-  <mat-grid-list cols="3" rowHeight="358px" class="mat-grit-fotter">
+<mat-card style="background-color: #96D1FF;">
+  <mat-grid-list cols="3"  rowHeight="350px">
     <mat-grid-tile >
-
         <div class="contact">
             <h1>contac us</h1>
         <br>
@@ -187,28 +162,20 @@ aplicación web.
           
           <label style="color: white;">Login</label>
         </div>
-        
-        
       </div>
-        
-     
-
-        
-
-    </mat-grid-tile>
+      
+  </mat-grid-tile>
     <mat-grid-tile>
         <div class="contact">
             <h1 style="text-align: center;">More of us</h1>
-        <br>
-        
+              
         <label>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, eligendi obcaecati. Culpa provident ad deserunt fugiat! Ut, repudiandae alias in eius quibusdam quaerat exercitationem voluptatum vero sit commodi libero vitae?
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit error laudantium molestiae nobis eveniet ad nostrum! Ea, minima ducimus. Ullam quas sint rem optio eius repellat, magnam perferendis voluptate. Atque.
             
         </label>
         </div>
     </mat-grid-tile>
     
   </mat-grid-list>
-  
+</mat-card>  
 
