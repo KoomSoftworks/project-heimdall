@@ -41,6 +41,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { AngularFirestore } from '@angular/fire/firestore';
+import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
     RegisterComponent,
     AppStartComponent,
     MainComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ForgotPassComponent
   ],
   imports: [
     BrowserModule,

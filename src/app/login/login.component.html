@@ -1,8 +1,10 @@
-
+<!--aqui se encuentra la barra de cargar la ventana de login-->
     <div *ngIf="cargando">
       <mat-spinner class="example-margin"></mat-spinner>
     </div>
+<!--aqui termina la barra de cargar la ventana de login-->
 
+<!--aqui se encuentra la barra de menu-->
     <div *ngIf="!cargando">
       <p>
         <mat-toolbar color="primary">
@@ -37,9 +39,11 @@
       <div *ngIf="!dc" class="alert alert-warning" role="alert">
         {{textoError}}
       </div>
-
+<!--aqui se termina la barra de menu-->
       <br><br><br>
-        <!--Logindiv-->
+
+      <!--aqui se encuentra el contenedor de los input y botones y links para registro y olvidar la contraseña-->
+        
         <mat-card class="example-card">
              
       
@@ -107,12 +111,13 @@
       </mat-card-actions>
       
       <mat-card-content align="center">
-        <button (click)="updatePass()">Do you forgot your password</button>
+        <label class="Lavel-go" routerLink="/start/fpass">Do you forgot your password</label><br>
         <label class="Lavel-go" routerLink="/start/register" routerLinkActive="Active" >Si aun no tienes un usuario registrate</label>
       </mat-card-content>
     </div>
    
   </mat-card> 
+  <!--aqui se termina el contenedor de los input y botones y links para registro y olvidar la contraseña-->
 
-    <!-- <ngx-spinner bdColor = "rgba(0,0,0,0)" size = "large" color = "#8994e2" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner> -->
+    
 

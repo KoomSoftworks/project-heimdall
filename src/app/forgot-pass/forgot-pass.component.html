@@ -1,0 +1,21 @@
+<div class="card mt-5">
+    <div class="card-body">
+      <h3 class="card-title text-center">Please enter your email</h3>
+      <form [formGroup]="formulariorp" class="example-form">
+
+            <p>   
+              <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email">
+              </mat-form-field>
+              <br><br>
+             
+            </p>
+          </form>
+      <div class="form-group text-center">
+        <button class="btn btn-primary btn-lg" (click)="onReset()">
+          Chage your password
+        </button>
+      </div>
+    </div>
+  </div>
