@@ -1,8 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MainNavBarComponent } from './main-nav-bar/main-nav-bar.component';
@@ -12,6 +14,9 @@ import { RegisterComponent } from './register/register.component';
 import { AppStartComponent } from './app-start/app-start.component';
 import { MainComponent } from './main/main.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -27,7 +32,16 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatSelectModule } from '@angular/material/select';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
+
+import { MatMenuModule } from '@angular/material/menu';
+import { LayoutModule } from '@angular/cdk/layout';
+
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { AngularFirestore } from '@angular/fire/firestore';
+import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
 
 @NgModule({
   declarations: [
@@ -38,13 +52,12 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     RegisterComponent,
     AppStartComponent,
     MainComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ForgotPassComponent
   ],
   imports: [
-    HttpClientModule,
-    HttpClientTestingModule,
     BrowserModule,
-    AppRoutingModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -53,19 +66,27 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatIconModule,
     MatButtonModule,
     MatTooltipModule,
+    MatCardModule,
+    MatInputModule,
+    MatGridListModule,
+    MatMenuModule,
+    LayoutModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    MatSnackBarModule,
+    MatProgressSpinnerModule,
+    NgxSpinnerModule,
     MatSidenavModule,
     MatListModule,
     MatDialogModule,
     MatTabsModule,
-    MatInputModule,
-    MatCardModule,
     MatDividerModule,
     MatSelectModule,
     MatAutocompleteModule,
-    MatGridListModule,
     MatProgressBarModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    AngularFireAuth,
+    AngularFirestore
+  ],  bootstrap: [AppComponent]
 })
 export class AppModule { }

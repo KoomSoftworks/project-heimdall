@@ -1,1 +1,181 @@
-<p>home works!</p>
+
+<!--aqui esta en menu-->
+<p>
+  <mat-toolbar color="primary">
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/start/register" routerLinkActive="Active">
+            <mat-icon>create</mat-icon>
+            <span routerLink="/start/register" routerLinkActive="active">Register</span>
+          </button>
+          
+          <button mat-menu-item routerLink="/start/login" routerLinkActive="Active">
+            <mat-icon>login</mat-icon>
+            <span >Login</span>
+          </button>
+        </mat-menu>
+    <span routerLink="/">Hemindall</span>
+    <span class="example-spacer"></span>
+    <button  mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" 
+    routerLink="/start/register" routerLinkActive="Active">
+      <mat-icon>create</mat-icon>
+      </button>
+    <button mat-icon-button class="example-icon login-icon" aria-label="Example icon-button with heart icon"
+    routerLink="/start/login" routerLinkActive="Active">
+      <mat-icon>login</mat-icon>
+      </button>
+  </mat-toolbar>
+</p>
+
+
+
+  <!--aqui esta la division de contenidos-->
+  
+  <div class="grid-container">
+    <h1 class="mat-h1">Dashboard</h1>
+        <mat-card >
+          <mat-card-header>
+            <mat-card-title>
+              Hemidall
+            </mat-card-title>
+          </mat-card-header>
+          <br><br>
+          <mat-card-content class="dashboard-card-content" >
+            El mundo corporativo esta en el proceso de trascender de las practicas y el trabajo
+                manual a la automatización, pero, aunque algunas empresas se nieguen a seguir con
+                el movimiento, eso no detiene a las grandes empresas de TI seguir adelante y llevar
+                estos procesos a un nivel más allá de la simple automatización. Ese nivel es la
+                autonomía.
+<br><br>
+                La autonomía de estos procesos, especialmente procesos de TI como la Integración
+                Continua, la cual incluye comúnmente las pruebas de software, y la Entrega Continua,
+                son una de las mayores claves para el éxito de estas empresas, ya que están tratando
+                de ganar la carrera contra sus competidores al ser los primeros en desplegar nuevas
+                tecnologías y ser capaces de arreglar fallas con sus sistemas para mantener una
+                mayor estabilidad y tiempo de disponibilidad de sus aplicaciones o servicios de TI.
+              
+          </mat-card-content>
+        </mat-card>
+  </div>
+  <br>
+  
+<!---Mat card de objetivo-->
+    <div class="grid-container">
+    
+    <mat-card>
+                <mat-card-header>
+                  <mat-card-title>Objetivos</mat-card-title>
+                  <mat-card-subtitle>Heminadall</mat-card-subtitle>
+                </mat-card-header>
+                
+                <mat-card-content>
+                  <p>
+                    El primordial objetivo de este proyecto es el desarrollo de una herramienta la cual
+                    permita la creación y la calidad de las pruebas de software de una manera más rápida
+                    y eficaz, utilizando herramientas y tecnologías emergentes como el Machine Learning
+                    y la Inteligencia Artificial se pretende crear una herramienta que le permita al usuario
+                    crear pruebas a través de una estimación de los objetos que pueda contener una
+                    aplicación web.
+                  </p>
+                </mat-card-content>
+        </mat-card>
+<br><br>
+
+        <mat-card>
+          
+            <mat-card-header>
+              
+              <mat-card-title>Alcance</mat-card-title>
+              <mat-card-subtitle>Heminadll</mat-card-subtitle>
+            </mat-card-header>
+            
+            <mat-card-content>
+              <p>
+                Usando Reconocimiento Óptico de Caracteres la herramienta pretende buscar un
+                elemento web relacionado a la palabra clave o tag que el usuario le suministre a la
+                aplicación a través de modelos entrenados de Machine Learning, los cuales serán
+                entrenados con una amplia variedad de iconos recopilados a través de diversas
+                aplicaciones web para asegurar su correcto funcionamiento y su viabilidad como una
+                herramienta independiente como suplemento para la creación más rápida y de mejor
+                calidad de una aplicación web, todo esto a través de una API, la cual podría ser
+                integrada a cualquier aplicación y accesada con un token de seguridad.
+                <br><br>
+                La aplicación no será un framework para pruebas automatizadas sino una herramienta
+                más la cual podrá ser usada en cualquier otro framework o a través de una interfaz
+                gráfica la cual será proporcionada a forma de demo por la aplicación.
+                
+              </p>
+            </mat-card-content>
+  </mat-card>
+  
+        </div>
+        
+      <br><br>
+    
+    
+
+  <!--Fotter home-->
+<mat-card style="background-color: #96D1FF;">
+  <mat-grid-list cols="3"  rowHeight="350px">
+    <mat-grid-tile >
+        <div class="contact">
+            <h1>contac us</h1>
+        <br>
+        <div class="example-button-row">
+          <div class="example-flex-container">
+            <div class="example-button-container">
+              <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+                <mat-icon>facebook</mat-icon> 
+              </button>
+              
+              <label style="color: white; font-size: 18px;">Contact us in facebook</label>
+            </div>
+          </div>
+        </div>
+        <br>
+        <h3>
+            and More.
+        </h3>
+        </div>
+        
+
+    </mat-grid-tile>
+    <mat-grid-tile>
+
+        <div class="contact">
+            <h1 style="text-align: center;">Service for client</h1>
+        <br>
+        
+        <div class="example-button-container">
+          <button mat-fab color="primary" aria-label="Example icon button with a delete icon" style="color: white;">
+            <mat-icon>how_to_reg</mat-icon>
+          </button>
+          <label style="color: white;">Register</label>
+        </div>
+        <br>
+        <div class="example-button-container">
+          <button mat-fab color="accent" aria-label="Example icon button with a bookmark icon" style="color: white;">
+            <mat-icon>account_circle</mat-icon>
+          </button>
+          
+          <label style="color: white;">Login</label>
+        </div>
+      </div>
+      
+  </mat-grid-tile>
+    <mat-grid-tile>
+        <div class="contact">
+            <h1 style="text-align: center;">More of us</h1>
+              
+        <label>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, eligendi obcaecati. Culpa provident ad deserunt fugiat! Ut, repudiandae alias in eius quibusdam quaerat exercitationem voluptatum vero sit commodi libero vitae?
+            
+        </label>
+        </div>
+    </mat-grid-tile>
+    
+  </mat-grid-list>
+</mat-card>  
+

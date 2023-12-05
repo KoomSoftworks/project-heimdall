@@ -12,7 +12,7 @@
             </button>
             <span class="app-name">Heimdall</span>
             <span class="spacer"></span>
-            <mat-icon aria-label="Exit" matTooltip="Exit">exit_to_app</mat-icon>
+            <mat-icon aria-label="Exit" matTooltip="Exit" (click)="this.router.navigate(['start/'])">exit_to_app</mat-icon>
         </mat-toolbar>
         <main>
             <router-outlet></router-outlet>
